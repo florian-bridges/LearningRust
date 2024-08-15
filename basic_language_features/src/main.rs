@@ -9,15 +9,25 @@ fn main() {
     println!("Three hours in seconds: {THREE_HOURS_IN_SECONDS}");
 
     // Shadowing:
-
-    let x = x + 1;
+    let y = 6;
+    let y = y + 1;
 
     {
-        let x = x * 2;
-        println!("The value of x in the inner scope is: {x}");
-        // The value of x in the inner scope is: 14
+        let y = y * 2;
+        println!("The value of y in the inner scope is: {y}");
+        // The value of y in the inner scope is: 14
     }
 
-    println!("The value of x is: {x}");
-    // The value of x is: 7
+    println!("The value of y is: {y}");
+    // The value of y is: 7
+
+    // Shadowing vs mut:
+    let spaces_shad = "   ";
+    let mut spaces_shad = spaces_shad.len();
+
+    let mut spaces_mut = "   ";
+    //spaces_mut = spaces_mut.len(); // err because mut
+    
+
+
 }
